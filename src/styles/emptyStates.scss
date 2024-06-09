@@ -1,0 +1,42 @@
+.empty-subject-catalogue {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 80vh;
+  margin: auto;
+
+  button {
+    border-radius: 10px;
+  }
+
+  p{
+    color: #667085;
+    
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 780px) {
+  .empty-subject-catalogue {
+    width: 90%;
+  }
+}

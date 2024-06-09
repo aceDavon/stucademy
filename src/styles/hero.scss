@@ -1,0 +1,80 @@
+@import "_variables";
+@import "_mixins";
+
+.hero-container{
+    width: 90%;
+    margin: 30px auto;  
+
+    @include flex-between-center;
+
+
+    .text-section, .image-section{
+         width: 50%; 
+        // font-family: "Lexend";
+    }
+
+    .text-section{
+      .content{
+        // width: 90%;
+        padding: 20px;
+        h2{
+            font-size: 40px;
+            align-self: stretch;
+            color: var(--primary-color);
+        }
+
+        p{
+            font-weight: 400;
+            line-height: 36px;
+        }
+      }
+    }
+
+    .image-section{
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .button-section{
+        @include flex-none-center;
+        gap: 20px;
+
+        .button{
+            width: 100px;
+            img{
+                width: 100%;
+                
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width:"450px") {
+    .hero-container{
+        flex-direction: column;
+        // display: block;
+        // width: 90%;
+        
+
+        .text-section, .image-section{
+            width:100%; 
+       }
+
+       .text-section{
+        .content{
+            padding: 10px 0px; 
+            header{
+                h2{
+                    font-size: 25px;
+                }
+            }
+        }
+       }
+    }
+    
+}

@@ -1,0 +1,97 @@
+@import "../_variables";
+@import "../_mixins";
+
+.login-container {
+  width: 70%;
+  margin: 15vh auto; 
+
+  .logo-section{
+    margin-bottom: 30px;
+    width: 20%;
+    img{
+        width: 100%;
+    }
+  }
+
+
+  .form-section {
+    width: 50%;
+    margin: auto;
+
+    .input-section {
+      margin: 30px 0px;
+      label {
+        font-weight: 500;
+      }
+
+      input {
+        @include inputStyle();
+      }
+    }
+
+    .recovery-section {
+      @include flex-between-center;
+      margin-bottom:30px;
+      .checkbox-area {
+        @include flex-none-center;
+        gap: 10px;
+        label {
+          font-weight: 500;
+        }
+      }
+      .forgot-section {
+        color: var(--secondary-color);
+        font-weight: 500;
+      }
+    }
+    .button-section{
+        margin: 20px 0px;
+    }
+    .continue {
+      @include buttonStyle(var(--primary-color), white, none);
+    } 
+    .withGoogle {
+      @include buttonStyle(white, black, none);
+      @include flex-center-center;
+      gap: 10px;
+
+      .icon{
+        font-size: 20px;
+      }
+    }
+    .signup, .forgot-section{
+        user-select: none;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        .blue{
+            font-weight: 500;
+        }
+    }
+  }
+}
+
+
+
+
+@media (max-width:"780px") {
+    .login-container {
+        width: 80%;
+        .form-section {
+            width: 100%; 
+        }
+
+        .logo-section { 
+            width: 60%;
+        }
+
+
+        
+    label, .forgot-section{
+        font-size: 12px !important;
+    }
+    }
+
+ 
+
+}

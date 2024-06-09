@@ -1,0 +1,67 @@
+@import "../mixins";
+@import "../variables";
+
+.card-container {
+  width: 180px;
+  height: 150px; 
+
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: Lexend;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  .icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      border-radius: 100%;
+    }
+  }
+
+  .title {
+    height: 30%;
+    font-size: 12px;
+    color: #9da6ba;
+    font-weight: 500;
+    @include flex-none-center;
+    margin: 10px 0px;
+  }
+
+  .card-footer {
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .count {
+      font-weight: 500;
+      font-size: 30px;
+    }
+
+    .percentage {
+      font-weight: 500;
+    }
+  }
+
+  .low-percentage{
+    color: #ED4546;
+  }
+
+  .high-percentage{
+    color: #00CC73;
+  }
+}
+
+.summary-cards-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}

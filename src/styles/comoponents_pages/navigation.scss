@@ -1,0 +1,54 @@
+@import "../mixins";
+@import "../variables";
+
+.navigation-container{
+    position: fixed;
+    left: 20%; 
+    @include flex-between-center;
+    height: 70px;
+    right: 0;
+    padding: 10px 20px;
+    background-color: white;
+    z-index: 1;
+
+
+    .profile-section{
+        @include flex-none-center; 
+        gap: 20px;
+        padding: 0;
+        .notification-icon{
+            font-size: 30px;
+            position: relative; 
+            width: 31px;
+    
+            .new{
+                color: red;
+                font-size: 10px;
+                position: absolute;
+                right: 0;
+                top: 5px;
+            }
+        }
+    
+        .avatar{
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: var(--primary-color);
+    
+    
+            img{
+                width: 100%;
+                object-fit: cover;
+                object-position: center top;
+                border-radius: 100%;
+            }
+    
+        }
+    }
+
+   
+
+
+
+}

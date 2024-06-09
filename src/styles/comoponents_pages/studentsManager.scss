@@ -1,0 +1,342 @@
+@import "../_mixins";
+@import "../_variables";
+
+.profile-section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+
+  .avatar-section {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: purple;
+    margin: 10px 0px 40px 0px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+  }
+}
+
+.questionsAsked-container {
+  width: 98%;
+  margin: auto;
+
+  nav {
+    align-items: center;
+    justify-content: space-between;
+
+    .subject-btn {
+      background-color: tranparent;
+      color: var(--text-dark);
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 12px;
+      margin: 0px 0px;
+      transition: all 0.3s linear;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .active-subject-btn {
+      @extend .subject-btn;
+      background-color: rgb(108, 138, 219, 0.1);
+      color: #6c8adb;
+      border: 1px solid #6c8adb;
+    }
+
+    .slider-section {
+      width: 80%;
+    }
+
+    .filter-button {
+      // width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      .select {
+        box-sizing: border-box;
+        border-radius: 5px;
+        box-shadow: 0px 0px 0px 1px rgba(128, 128, 128, 0.3);
+        padding: 5px 10px;
+        select {
+          background-color: transparent;
+          color: grey;
+          outline: none;
+          border: none;
+        }
+      }
+    }
+
+    .slick-prev,
+    .slick-next {
+      background-color: rgb(128, 128, 128, 0.1) !important;
+      box-shadow: none;
+      border-radius: 0;
+
+      &::before {
+        color: grey;
+      }
+    }
+  }
+
+  .dated-question {
+    margin: 30px 0px;
+    .date {
+      color: var(--primary-color);
+      margin: 10px 0px;
+    }
+
+    .question-section {
+      margin: 20px 0px;
+      padding: 10px 0px;
+    }
+
+    .author {
+      font-weight: 600;
+    }
+
+    .time {
+      color: var(--text-grey);
+      font-size: 14px;
+    }
+
+    .question {
+      font-size: 14px;
+      margin: 10px 0px;
+    }
+
+    .question-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 10px 0px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .icon {
+          width: 20px;
+          img {
+            width: 100%;
+          }
+        }
+
+        &:first-child {
+          border-right: 1px solid black;
+          padding-right: 10px;
+        }
+      }
+
+      .subject {
+        color: #8e8ea9;
+        background-color: rgb(142, 142, 169, 0.1);
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 7px;
+        font-weight: 600;
+      }
+    }
+  }
+  .author-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .answer-section {
+    .heading {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .icon {
+      width: 20px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .likes-section,
+    .item {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .likes-section {
+      justify-content: space-between;
+      width: 20%;
+    }
+
+    .item {
+      gap: 10px;
+    }
+  }
+}
+
+.point-history-container {
+  .buttons {
+    button {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: var(--primary-color);
+        color: white;
+      }
+    }
+  }
+
+  .points-stats-container {
+    @include flex-between-center;
+    gap: 15px;
+    margin: 20px 0px;
+    p {
+      color: var(--text-grey);
+      font-weight: 600;
+    }
+    .stat {
+      box-shadow: 0px 0px 0px 1px rgba(128, 128, 128, 0.3);
+      border-radius: 10px;
+      padding: 10px;
+      width: 33%;
+      .count-status-section {
+        @include flex-between-center;
+
+        .status {
+          background-color: rgba(var(--primary-opacity), 0.15);
+          color: var(--primary-color);
+          border-radius: 20px;
+          padding: 5px 10px;
+          @include flex-between-center;
+          font-size: 12px;
+          gap: 2px;
+          // span {
+          //   width: 50%;
+          // }
+        }
+
+        .negative {
+          @extend .status;
+          background-color: rgba(255, 0, 0, 0.15);
+          color: red;
+        }
+        .positive {
+          @extend .status;
+          background-color: rgba(0, 204, 115, 0.15);
+          color: #00cc73;
+        }
+      }
+
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        box-shadow: 0px 0px 0px 1px rgba(var(--primary-opacity), 1);
+      }
+    }
+
+    .active-stat {
+      @extend .stat;
+      box-shadow: 0px 0px 0px 1px rgba(var(--primary-opacity), 1);
+    }
+  }
+
+  .points-history {
+    font-size: 12px;
+    .date-range {
+      color: #8e8ea9;
+
+      header {
+        font-size: 14px;
+      }
+      .subtitle {
+        @include flex-none-center;
+        gap: 10px;
+
+        a {
+          background-color: transparent;
+          color: var(--primary-color);
+          font-weight: 600;
+          cursor: pointer;
+          user-select: none;
+        }
+      }
+    }
+
+    .item {
+      @include flex-between-center;
+      margin: 10px 0px;
+      padding: 10px 0px;
+      border-top: 0.5px solid #e4e5ed;
+
+      .icon-text-section {
+        @include flex-none-center;
+        gap: 20px;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        overflow: hidden;
+
+        img,
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.buttons {
+  @include flex-end-center;
+  gap: 20px;
+
+  button {
+    width: 120px;
+    border-radius: 4px !important;
+    font-size: 12px;
+
+    &:first-child {
+      background-color: white;
+      color: var(--text-dark);
+    }
+  }
+}
+
+.header-filter {
+  display: flex;
+  justify-content: flex-end;
+  .filter-button {
+    gap: 20px;
+
+    button {
+      border-radius: 5px !important;
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .select {
+      border-radius: 5px;
+      box-shadow: 0px 0px 0px 1px rgba(128, 128, 128, 0.3);
+      padding: 5px 10px;
+      select {
+        background-color: transparent;
+        color: grey;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}

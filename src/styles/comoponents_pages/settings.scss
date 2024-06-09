@@ -1,0 +1,25 @@
+.profile-settings-container{
+ .input-section{
+  margin: 10px 0px;
+ }
+}
+
+.password-settings-container{
+ .buttons{
+  justify-content: flex-start;
+ }
+
+ .input-section{
+  .input{
+   position: relative;
+  }
+
+  .eye{
+   position: absolute;
+   top: 35%;
+   right: 10px;
+  }
+
+
+ }
+}

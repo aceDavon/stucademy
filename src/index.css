@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,800&display=swap'); 
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,400;9..40,700&display=swap'); */
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,400;9..40,700&family=Lexend:wght@100;200;300;400;500;600;700&display=swap');
+ 
+ 
+
+body {
+  margin: 0;
+  font-family: 'DM Sans' !important; 
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+ color: #696984;
+ 
+}
+header{
+  font-family: 'Lexend';
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+ 
+
+
+:root{
+  --primary-color: #6651D1;
+  --primary-opacity: 102, 81, 209;
+  --secondary-color: #FB8E0B;
+  --bg-dark: #474958;
+  --bg-grey: #E8E9ED; 
+  --bg-light: #F8F8FA;  
+  --text-grey: #6B7280; 
+  --text-dark: #222843; 
+  --success:#00CC73;
+
+}
+body{
+  background-color: #fafafa !important ;
+}
+
+.fw-500{
+font-weight: 500;
+font-size: 14px;
+}

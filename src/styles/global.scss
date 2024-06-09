@@ -1,0 +1,281 @@
+@import "_variables";
+@import "_mixins";
+@import "./comoponents_pages/checkbox";
+button {
+  @include buttonStyle(var(--primary-color), white, none);
+}
+
+.bordered-button {
+  border: 2px solid var(--primary-color);
+  background-color: transparent;
+  color: var(--primary-color);
+  transition: all 0.3s linear;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+}
+
+.other-components {
+  position: relative;
+  top: 73px;
+
+  // height: 3000px;
+  // background-color: greenyellow;
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.green {
+  color: var(--success);
+}
+.blue {
+  color: #4c6fe6;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
+.template-with-sidebar-body {
+  position: absolute;
+  top: 90px;
+  left: calc(20% + 20px);
+  right: 20px;
+}
+
+.input-section {
+  margin: 30px 0px;
+  label {
+    font-weight: 500;
+  }
+
+  input,
+  textarea {
+    @include inputStyle();
+  }
+  .text-count {
+    font-size: smaller;
+    color: #dedede;
+  }
+}
+
+.toggle-container {
+  display: inline-block;
+  position: relative;
+}
+
+.toggle-input {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 40px;
+  height: 20px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+
+  .toggle-slider {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.toggle-input:checked + .toggle-label {
+  background-color: var(--primary-color);
+}
+
+.toggle-input:checked + .toggle-label .toggle-slider {
+  transform: translateX(20px);
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.history-table {
+  margin: 20px 0px;
+  width: 100%;
+  color: green;
+  table {
+    width: 100%;
+
+    thead {
+      td {
+        color: var(--content-text-3, #8e8ea9);
+        font-family: Lexend;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+        padding: 10px 0px;
+
+        .icon {
+          font-size: 16px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          border-bottom: 1px solid #f0f3f6;
+          color: var(--neutral-900, #0f172a);
+          font-family: DM Sans;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          padding: 10px 10px 10px 0px;
+        }
+
+        .profile {
+          @include flex-none-center;
+          gap: 10px;
+          .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            background-color: var(--primary-color);
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center top;
+            }
+          }
+
+          .name {
+            font-weight: 500;
+          }
+          .username {
+            font-size: 10px;
+          }
+        }
+
+        .status-column {
+          @include flex-none-center;
+          gap: 10px;
+
+          .options {
+            font-size: 25px;
+            color: #9fa3a8;
+          }
+        }
+
+        .inactive-subject {
+          padding: 10px;
+          align-items: center;
+          border-radius: 4px;
+          border: 1px solid var(--error-wrong, #ed4546);
+          background: rgba(237, 69, 70, 0.1);
+          color: var(--error-wrong, #ed4546);
+          font-family: DM Sans;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          width: 80px;
+          text-align: center;
+        }
+        .active-subject {
+          @extend .inactive-subject;
+          color: var(--success-right, #00cc73);
+          border: 1px solid var(--success-right, #00cc73);
+          background: rgba(0, 204, 115, 0.1);
+        }
+        .active-resolved {
+          @extend .inactive-subject;
+          color: var(--primary-color);
+          border: 1px solid var(--primary-color);
+          background: rgba(var(--primary-opacity), 0.1);
+        }
+
+        .options {
+          position: relative;
+        }
+
+        &:hover {
+          border-bottom: 1px solid #f0f3f6;
+          background: #f5f5ff;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  font-weight: 400;
+  color: #667085;
+  gap: 20px;
+  font-size: 12px !important;
+}
+
+.status-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.underlay-text {
+  font-size: 11px;
+  color: #8692a6;
+}
+
+.options-menu-global {
+  background-color: white;
+  padding: 10px;
+  width: 150px;
+  border-radius: 10px;
+  color: #6b7280;
+  font-size: 12px;
+  position: absolute;
+  top: 30px;
+  // left: -60px;
+  right: 10px;
+  box-shadow: 0px 0px 0px 1px rgba(128, 128, 128, 0.3);
+  z-index: 1;
+  .item {
+    @include flex-none-center;
+    gap: 10px;
+    padding: 10px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #f3f4f6;
+    }
+  }
+}
+
+.note {
+  color: var(--primary-color);
+  font-size: 10px;
+  background-color: rgb(var(--primary-opacity), 0.2);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.bg-primary-10 {
+  background-color: rgb(var(--primary-opacity), 0.1);
+}
+.primary-color {
+  color: var(--primary-color);
+}
